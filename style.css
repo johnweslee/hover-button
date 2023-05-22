@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap");
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background: #1a1a1a;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mybutton {
+  position: relative;
+  padding: 18px 50px;
+  background: rgb(255, 255, 255);
+  font-size: 20px;
+  letter-spacing: 1px;
+  outline: none;
+  border-radius: 50px;
+  font-weight: 600;
+  border: 2px solid gray;
+  overflow: hidden;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  z-index: 1;
+  transition: color 0.3s;
+}
+
+.mybutton::before,
+.mybutton::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 100%;
+  left: 0;
+  z-index: -1;
+  transition: transform 0.3s cubic-bezier(0.75, 0, 0.125, 1);
+}
+
+.mybutton::before {
+  background: lightgray;
+}
+
+.mybutton::after {
+  background: gray;
+}
+
+.mybutton:hover {
+  color: #fff;
+}
+
+.mybutton:hover::before,
+.mybutton:hover::after {
+  transform: translate3d(0, 100%, 0);
+}
+
+.mybutton:hover::after {
+  transition-delay: 0.18s;
+}
